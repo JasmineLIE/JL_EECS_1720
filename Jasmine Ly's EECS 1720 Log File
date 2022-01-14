@@ -4,7 +4,8 @@ Jasmine Ly's EECS 1720 Log File
 
 01-13-22 - [DAY 1]
 
-Created the Log File
-Uploaded Volmer's Walker code for personal access, sampling, and use.
+-Created the Log File
+-Uploaded Volmer's Walker code for personal access, sampling, and use.
+-Adjusted the walker code and played around with a colour randomizer that picks values based on randomGuassian()
 
 --
