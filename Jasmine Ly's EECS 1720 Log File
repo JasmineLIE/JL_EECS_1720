@@ -13,4 +13,12 @@ Jasmine Ly's EECS 1720 Log File
 01-14-22 - [DAY 2]
 
 -Moved the Walker code elsewhere for organization
--Wrote code to practice Vector Math in processing.  Created a small sketc that draws a line using PVector, multi(), normalize(), and mag().
+-Wrote code to practice Vector Math in processing.  Created a small sketch that draws a line using PVector, multi(), normalize(), and mag().
+
+--
+
+01-15-22 - [DAY 3]
+
+-Wrote code to practice acceleration in processing.
+
+--
