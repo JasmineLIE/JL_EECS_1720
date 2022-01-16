@@ -15,16 +15,23 @@ class Mover {
     location = new PVector(width/2, height/2);
     velocity = new PVector(0, 0);
     acceleration = new PVector(0, 0);
-    //
+    //think of small quantities when accelerating
+   
     
   }
   
   void update() {
+    
+    acceleration = PVector.random2D();
+    //vector class has a random unit vector function built into it 
+    
    location.add(velocity); 
    velocity.add(acceleration);
    //add velocity to location, essentially making the ball move
    //creates a physics engine
    
+    velocity.limit(5);
+    //constructs an artificial constraint; the velocity can never have a magnitutde greater than 5
   }
   void edges() {
    if (location.x > width) location.x = 0;
