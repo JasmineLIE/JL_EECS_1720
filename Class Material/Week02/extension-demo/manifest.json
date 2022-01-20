@@ -1,0 +1,17 @@
+{
+  //manifest.json describes all the metadata information of our extension like Name, Version, Extention Icon, etc,
+  
+  "name": "Jasmine''s Extension Demo",
+  "version": "1.0",
+  "description": "Build an Basic Extension!  This one says Hello World!  As a popup when you click the extension icon",
+  "permissions": ["activeTab"],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "img/icon16.png",
+      "32": "img/icon32.png",
+      "48": "img/icon48.png"
+    }
+  },
+  "manifest_version": 2
+}
