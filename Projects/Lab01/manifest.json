@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+
+  "name": "Destiny's Browser",
+  "description": "This extension lets you customize the look of your Google search page and removes ads",
+  "version": "1.0",
+  "icons": {
+    "128": "images/icon128.png",
+    "48": "images/icon48.png",
+    "16": "images/icon16.png"
+  },
+
+"page_action": {
+    "default_icon": {
+      "128": "images/icon128_2.png",
+      "48": "images/icon48_2.png",
+      "16": "images/icon16_2.png",
+    }
+  },
+    "content_scripts": [{}]
+}
