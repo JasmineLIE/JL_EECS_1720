@@ -18,9 +18,17 @@
             "128": "/images/icon128_2.png"
         }
         
+    },
+
+    "content_scripts": [
+        {
+
+        "matches": ["https://www.google.com/*"],
+
+        "css": ["main.css"]
     }
 
-
+]
 
 
 }
