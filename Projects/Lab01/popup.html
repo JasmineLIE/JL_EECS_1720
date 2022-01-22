@@ -6,38 +6,37 @@
         <link rel="stylesheet" type="text/css" href="popupStyle.css">
     </head>
     <body>
-        <h3 id="greet">Destiny's Google Search Customization</h3>
+        <h2 id="greet">Destiny's Google Search Customization</h2>
 
         <p id="message">Refresh if ya' need to, hoss!</p>
 
-        <div id="optionsWrapper">
-            <h5 id="adTitle">Browser Styles</h5>
-            <div class="controlsWrapper">
+        <h3 id="adTitle">Browser Themes</h3>
+        <p id="message">Thinking something new?</p>
+        <div id="radioWrapper" class = "controlsWrapper">
+            <input type ="radio"class="themeDisplay" name="themeVisibility" value="tumbleweed"   checked> Tumbleweed<br>
+            <input type ="radio" class="themeDisplay" name="themeVisibility" value="oldBlues"> Old Blues<br>
+            <input type ="radio" class="themeDisplay" name="themeVisibility" value="limeChild"> Lime Child<br>
 
-                <input type="checkbox" id="removeArrowCheckBox" class="checkbox" name="removeArrow" value="arrow"> Remove Arrow/Dots after URL<br>
-                <input type="checkbox" id="removeUrlCheckBox" class="checkbox" name="removeUrl" value="url"> Remove URL<br>
-                             
-                <input type="checkbox" id="colorUrlCheckBox" class="checkbox" name="colorUrl" value="color"> Colour URL<br>
-                Url Color: <input type="textbox" id="urlColorSelection" class="colorSelection"> 
+
+               
             </div>
 
-            <h5 id="adTitle">Widget Settings</h5>
-            <div id="widgetsMessage">Select the widgets you want removed.</div>
-            <div class="controlsWrapper">
-                <input type="checkbox" id="twitterWidgetCheckBox" class="checkbox"> Twitter Widget<br>                
-                <input type="checkbox" id="searchWidgetCheckBox" class="checkbox"> "Related searches" Widget<br>
-                <input type="checkbox" id="askWidgetCheckBox" class="checkbox"> "People also ask" Widget<br>
-                <input type="checkbox" id="sideBarWidgetCheckBox" class="checkbox"> Side bar info Widget<br>
-                <input type="checkbox" id="mapsFindResultsOnWidgetCheckBox" class="checkbox"> "Find Results On" Widget<br>
-                <input type="checkbox" id="mapsWidgetCheckBox" class="checkbox"> Google Maps Widget<br>
+            <h3 id="adTitle">Ad Settings</h3>
+            <p id="message">Those ads botherin' you any?</p>
+            <div id="radioWrapper" class="controlsWrapper">
+                <input type="radio" id="message" class="adsDisplay" name="adVisibility" value="remove"> Remove<br>
+                <input type="radio" id="message"class="adsDisplay" name="adVisibility" value="normal"> Normal<br>
+                <input type="radio" id="message" class="adsDisplay" name="adVisibility" value="standOut2"> Stand Out<br>
+                Ad Color: <input type="textbox" id="adBackgroundColorSelection" class="colorSelection"> (<a class="link" target="_blank" href="https://www.google.com/search?q=hex+color+picker">pick and paste your HEX color code</a>)<br>
             </div>
 
-            <h5 id="adTitle">Additional Settings</h5>
+            <h3 id="adTitle">Additional Settings</h3>
             <div class="controlsWrapper">
                  <input type="checkbox" id="imagesCheckBox" class="checkbox"> Remove images within search results<br>
             </div> 
-
-            <button id="defaultSettings"> Restore Defaults</button>
+            <br>
+            <hr>
+            <center><a class="link" target="_blank" href="https://github.com/JasmineLIE/EECS_1720/tree/main/Projects/Lab01">Source Code</a></center>
             <br>
             <br>
         </div>
