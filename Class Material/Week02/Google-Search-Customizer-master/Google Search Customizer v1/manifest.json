@@ -15,12 +15,13 @@
     "default_popup": "popup.html"
   },
 
-  "content_scripts": [{
-    "matches": [
-      "<all_urls>"
-    ],
+  "content_scripts": [
+    {
+    "matches": ["<all_urls>"],
     "js": ["program.js"]
-  }],
+  }
+
+],
 
   "background": {
     "scripts": ["background.js"]
