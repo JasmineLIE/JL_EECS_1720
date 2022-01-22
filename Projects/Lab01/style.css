@@ -1,5 +1,14 @@
+
+
 html body {
-    background: url("https://i.imgur.com/dyMXBiQ.jpeg") center center fixed;
+    
+    background: url("https://i.imgur.com/54euOeo.jpg") center center fixed;
+-webkit-text-fill-color: #FFC300;
+-webkit-text-stroke: 0.75px rgb(167, 94, 0);
+-webkit-font-smoothing: antialiased;
+-webkit-tap-highlight-color: rgb(167, 94, 0);
+font-kerning: none;
+text-decoration-color: #ffcf31;
 
 }
 
