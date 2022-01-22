@@ -1,3 +1,4 @@
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     width: 400px;
@@ -54,7 +55,7 @@ a {
     position: relative;
     display: inline-block;
 }
-  
+
   /* Tooltip text */
 .tooltip .tooltiptext {
     visibility: hidden;
@@ -64,14 +65,14 @@ a {
     text-align: center;
     padding: 5px 0;
     border-radius: 6px;
-  
+
     /* Position the tooltip text */
     position: absolute;
     z-index: 1;
     bottom: 125%;
     left: 50%;
     margin-left: -60px;
-  
+
     /* Fade in tooltip */
     opacity: 0;
     transition: opacity 1s;
@@ -91,7 +92,7 @@ a {
     border-style: solid;
     border-color: transparent black transparent transparent;
   }
-  
+
   /* Show the tooltip text when you mouse over the tooltip container */
   .tooltip:hover .tooltiptext {
     visibility: visible;
