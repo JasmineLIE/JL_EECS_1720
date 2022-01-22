@@ -21,20 +21,20 @@ if(url.includes(".google.") && isSearch()){
 
         "colorUrl": false,
         "urlColor": "#f530ff", //green, etc
-        
-        "twitterWidget": false,        
+
+        "twitterWidget": false,
         "searchWidget": false,
         "askWidget": false,
-        "sideBarWidget": false,         
-        "mapsFindResultsOnWidget": false,                   
+        "sideBarWidget": false,
+        "mapsFindResultsOnWidget": false,
         "mapsWidget": false,
 
         "images": false
-  
+
     };
 
     //Store defaults if nothing is stored.
-    chrome.storage.sync.get(['configuration'], function(storedConfiguration) { 
+    chrome.storage.sync.get(['configuration'], function(storedConfiguration) {
         if('configuration' in storedConfiguration)
             configuration = storedConfiguration;
         else
@@ -86,13 +86,13 @@ function modifySearchResults(configuration){
         removeElements(".qdrjAc", 0);
 
         //Decrease distance between results.
-        decreaseResultDistance("TbwUpd"); //Normal results.  
+        decreaseResultDistance("TbwUpd"); //Normal results.
     }
 
     //Remove Widgets///////////////////////////////////////////
     if(configuration.twitterWidget)
         removeElements(".otisdd", 2);
-    
+
     if(configuration.searchWidget)
         removeElements("#botstuff", 0);
 
@@ -100,7 +100,7 @@ function modifySearchResults(configuration){
         removeElements(".JolIg", 4);
         removeElements(".Wt5Tfe", 2);
     }
-        
+
     if(configuration.sideBarWidget){
         removeElements(".liYKde", 1);
         removeElements(".Lj180d", 6);
@@ -118,7 +118,7 @@ function modifySearchResults(configuration){
     if(configuration.images){
         ApplyToClass("SD80kd", function(element){
             element.style.display = "none";
-        });
+
 
         ApplyToClass("FxLDp", function(element){
             element.style.padding = "0";
@@ -144,6 +144,7 @@ function setUrlColor(urlColor){
         //Set the text color for each element.
         forEachDoThis(listOfElementLists, function(element){
             element.style.color = urlColor;
+
         });
     }
 }
