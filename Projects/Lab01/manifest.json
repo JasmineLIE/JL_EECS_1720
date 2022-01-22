@@ -20,8 +20,8 @@
         {
 
         "matches": ["<all_urls>"],
-        "css": ["limeStyle.css"],
-        "js": ["program.js"]
+        "css": ["limeStyle.css"]
+    
     }
 
 ],
@@ -30,7 +30,7 @@
   },
 
 "permissions": [
-    "storage",
-    "default_popup"
+    "storage"
+    
   ]
 }
