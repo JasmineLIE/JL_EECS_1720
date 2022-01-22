@@ -1,6 +1,6 @@
 window.addEventListener('load', (event) => {
     //Initialization////////////////////////////////////////////////////
-    chrome.storage.sync.get(['configuration'], function(configuration) { 
+    chrome.storage.sync.get(['configuration'], function(configuration) {
         setUI(configuration["configuration"]);
     });
 
@@ -58,7 +58,7 @@ window.addEventListener('load', (event) => {
         changeConfig("images", event.target.checked);
     });
 
-    
+
     //Button///////////////
     document.getElementById("defaultSettings").addEventListener("click", restoreDefaultConfig);
 
@@ -71,14 +71,14 @@ window.addEventListener('load', (event) => {
 
                 "colorUrl": false,
                 "urlColor": "#f530ff", //green, etc
-                
+
                 "twitterWidget": false,
                 "searchWidget": false,
                 "askWidget": false,
-                "sideBarWidget": false,         
-                "mapsFindResultsOnWidget": false,                
+                "sideBarWidget": false,
+                "mapsFindResultsOnWidget": false,
                 "mapsWidget": false,
-                
+
                 "images": false
             }
         }
@@ -91,13 +91,13 @@ window.addEventListener('load', (event) => {
     }
 
     ///////////////////////
-    
+
     //Functions////////////////////////////////////////////////////////////
 
     function setUI(configuration){
         document.getElementById("removeArrowCheckBox").checked = configuration.removeArrow;
         document.getElementById("removeUrlCheckBox").checked = configuration.removeUrl;
-        
+
         document.getElementById("colorUrlCheckBox").checked = configuration.colorUrl;
         document.getElementById("urlColorSelection").value  = configuration.urlColor;
 
@@ -107,13 +107,13 @@ window.addEventListener('load', (event) => {
         document.getElementById("sideBarWidgetCheckBox").checked = configuration.sideBarWidget;
         document.getElementById("mapsFindResultsOnWidgetCheckBox").checked = configuration.mapsFindResultsOnWidget;
         document.getElementById("mapsWidgetCheckBox").checked = configuration.mapsWidget;
-        
+
         document.getElementById("imagesCheckBox").checked = configuration.images;
 
     }
 
     function changeConfig(key, value){
-        chrome.storage.sync.get(['configuration'], function(configuration) { 
+        chrome.storage.sync.get(['configuration'], function(configuration) {
             configuration["configuration"][key] = value;
 
             chrome.storage.sync.set({'configuration': configuration["configuration"]}, function(){});
