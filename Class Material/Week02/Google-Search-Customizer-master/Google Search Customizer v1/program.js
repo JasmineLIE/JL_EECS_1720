@@ -37,7 +37,7 @@ if(url.includes(".google.") && isSearch()){
     };
 
     //Store defaults if nothing is stored.
-    chrome.storage.sync.get(['configuration'], function(storedConfiguration) { 
+    chrome.storage.sync.get(['configuration'], function(storedConfiguration) {
         if('configuration' in storedConfiguration)
             configuration = storedConfiguration;
         else
@@ -114,16 +114,20 @@ function modifySearchResults(configuration){
 
             //Color top ads if present.
             if(tawElement != undefined)
+
                 tawElement.style.backgroundColor = configuration.adBackgroundColor;
 
             //Color bottom ads if present.
             if(tawElement != undefined)
+
                 adsbottom.style.backgroundColor = configuration.adBackgroundColor;
-            
+
             if(tawElement != undefined){
                 ApplyToClass("waTp2e", function(element){
                     //Color ads.
+                  
                     element.style.backgroundColor = configuration.adBackgroundColor;
+
                     element.style.padding = "10px 10px 10px 10px";
                 });
             }
@@ -137,12 +141,12 @@ function modifySearchResults(configuration){
         removeElements(".ads-ad", 0);
     }
 
-    
+
     //Move Url////////////////////////////////////////////////////////////////
     if(configuration.moveUrl){
         cutPasteUrl();
         cutPasteUrlPagesThingy();
-        
+
         //Decrease distance between results.
         decreaseResultDistance("TbwUpd"); //Normal results.
     }
@@ -151,7 +155,7 @@ function modifySearchResults(configuration){
     //MoveUrl////////////////////////////////////////////////////////////////
     if(configuration.moveUrl && (configuration.adsDisplay != "remove")){
         cutPasteUrlAds();
-        
+
         //Decrease distance between results.
         decreaseResultDistance("sA5rQ"); //Ads
         decreaseResultDistance("TbwUpd"); //Normal results.
@@ -166,7 +170,7 @@ function modifySearchResults(configuration){
         removeElements(".JolIg", 4);
         removeElements(".Wt5Tfe", 2);
     }
-        
+
     if(configuration.twitterWidget)
         removeElements(".otisdd", 2);
 
@@ -224,11 +228,11 @@ function modifySearchResults(configuration){
     if(configuration.removeEmojis){
         //Make list of elements to be processed.
         let listOfElementLists = [
-            document.getElementsByClassName("LC20lb"), 
+            document.getElementsByClassName("LC20lb"),
             document.getElementsByClassName("st"),
             document.getElementsByClassName("cbphWd"),
             document.getElementsByClassName("fl")
-        ]; 
+        ];
 
         //For each element take it's inner text replace any emojis with '' and save the new string back into the element.
         forEachDoThis(listOfElementLists, function(element){
@@ -263,7 +267,7 @@ function setUrlColor(urlColor){
 
 function setUrlColorAds(urlColor){
     if(urlColor != ""){
-        let urls = document.getElementsByClassName("gBIQub"); 
+        let urls = document.getElementsByClassName("gBIQub");
 
         for(let i = 0; urls.length > i; i++)
             urls[i].style.color = urlColor;
@@ -284,7 +288,7 @@ function cutPasteUrl(){
     for(let i = 0; i < elementsG.length; i++){
         elementsG[i].style.margin = "0px 0px 20px 0px";
     }
-    
+
     //Remove <br>.
     for(let i = 0; i < elements.length; i++){
         let brTags = elements[i].parentNode.getElementsByTagName("BR");
@@ -298,10 +302,10 @@ function cutPasteUrl(){
         if(!elements[i].className.includes("NJjxre")){
             let element = elements[i]; //Get url element.
             let parentElement = element.parentNode.parentNode; //Get parent element
-            
+
             //Get the element before which the url has to be inserted.
             insertBeforeElement = parentElement.childNodes[0];
-            
+
             //insert element in new position.
             insertAfter(element, insertBeforeElement); //parentElement.insertBefore(element, insertBeforeElement);
         }
@@ -319,15 +323,15 @@ function cutPasteUrl(){
 
 function cutPasteUrlAds(){
     let elements = document.getElementsByClassName("ads-visurl");
-    
+
     for (let i = 0; i < elements.length; i++){
         if(!elements[i].className.includes("NJjxre")){
             let element = elements[i]; //Get url element.
             let parentElement = element.parentNode.parentNode; //Get parent element
-            
+
             //Get the element before which the url has to be inserted.
             insertBeforeElement = parentElement.childNodes[0];
-            
+
             //insert element in new position.
             insertAfter(element, insertBeforeElement); //parentElement.insertBefore(element, insertBeforeElement);
         }
@@ -346,13 +350,13 @@ function cutPasteUrlPagesThingy(){
         //if(!elementsConst[i].includes("qks8td")){
             let element = elements[i];
             let parentElement = element.parentNode.parentNode.parentNode;
-            
+
             elements[i].parentNode.removeChild(elements[i]);
-    
+
             insertBeforeElement = parentElement.childNodes[1]
-    
+
             parentElement.insertBefore(element, insertBeforeElement);
-        //} 
+        //}
     }
 }
 
