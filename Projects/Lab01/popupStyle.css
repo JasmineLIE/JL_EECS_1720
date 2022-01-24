@@ -40,8 +40,9 @@ a{
 }
 
 #message{
-    color: rgb(0, 0, 0);
-
+    color: rgb(255, 255, 255);
+    text-size-adjust: 20px;
+    text-shadow: rgb(0, 0, 0) 0 -1px 4px, rgb(0, 0, 0) 0 -2px 10px, #000000 0 -10px 20px, rgb(0, 0, 0) 0 -18px 40px;
  font-weight: bold;
 }
 
@@ -107,4 +108,7 @@ a{
 
 .colorSelection{
     width: 80px;
+
+    
 }   
+
