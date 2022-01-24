@@ -2,16 +2,19 @@
   html body {
     background: url("https://media3.giphy.com/media/RpAuV6mhecg00Y6V7D/giphy.gif?cid=790b7611f0a08a37d1aaf188b8d3da40939ea68b802cb9c8&rid=giphy.gif&ct=g") center center fixed;
   }
-body {
+body { /* affects the radio button and checkbox text + the entire body */
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
     width: 400px;
+    font-weight: bold;
+    text-shadow: #FFF 0 -1px 4px, rgb(255, 0, 149) 0 -2px 10px, #1e1bff 0 -10px 20px, rgb(255, 255, 255) 0 -18px 40px;
 }
 #greet {
   
     color: rgb(255, 255, 255);
 
     text-shadow: #FFF 0 -1px 4px, rgb(255, 0, 149) 0 -2px 10px, #1e1bff 0 -10px 20px, rgb(21, 255, 91) 0 -18px 40px;
-   
+ 
     }
 #optionsWrapper{
     font-size: 15px;
@@ -30,7 +33,7 @@ body {
     color: rgb(255, 255, 255);
 
     text-shadow: #FFF 0 -1px 4px, rgb(255, 0, 149) 0 -2px 10px, #1e1bff 0 -10px 20px, rgb(21, 255, 91) 0 -18px 40px;
-
+  
    
 }
 
@@ -43,7 +46,7 @@ a{
     color: rgb(255, 255, 255);
     text-size-adjust: 20px;
     text-shadow: rgb(0, 0, 0) 0 -1px 4px, rgb(0, 0, 0) 0 -2px 10px, #000000 0 -10px 20px, rgb(0, 0, 0) 0 -18px 40px;
- font-weight: bold;
+
 }
 
 .tooltip {
@@ -97,6 +100,7 @@ a{
 .link{
     font-size: 13px;
     margin-top: 1px;
+    color:rgb(255, 255, 255)
 }
 
 #widgetsMessage{
@@ -104,6 +108,7 @@ a{
     margin-left: 10px;
     margin-bottom: 5px;
     margin-top: 5px;
+   
 }
 
 .colorSelection{
