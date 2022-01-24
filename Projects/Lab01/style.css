@@ -3,7 +3,6 @@
     background: url("https://i.imgur.com/54euOeo.jpg") center center fixed;
     background-color: rgba(200,100,0,.5); /* Tint color.  Has to be right below the background: url to take */
     background-blend-mode: multiply;
-  
 -webkit-text-fill-color: #FFC300;
 -webkit-text-stroke: 0.75px rgb(167, 94, 0);
 -webkit-font-smoothing: antialiased;
