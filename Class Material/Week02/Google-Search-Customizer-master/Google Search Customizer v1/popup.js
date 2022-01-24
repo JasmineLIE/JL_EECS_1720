@@ -2,7 +2,7 @@
 
 window.addEventListener('load', (event) => {
     //Initialization////////////////////////////////////////////////////
-    chrome.storage.sync.get(['configuration'], function(configuration) { 
+    chrome.storage.sync.get(['configuration'], function(configuration) {
         setUI(configuration["configuration"]);
     });
 
@@ -11,7 +11,7 @@ window.addEventListener('load', (event) => {
     //Events////////////////////////////////////////////////////////////
 
     //Checkbox events//////////////////////
-    
+
     document.getElementById("removeUrlCheckBox").addEventListener("change", event =>{
         changeConfig("removeUrl", event.target.checked);
     });
@@ -80,7 +80,7 @@ window.addEventListener('load', (event) => {
     document.getElementById("urlColorSelection").addEventListener("change", event =>{
         changeConfig("urlColor", event.target.value);
     });
-    
+
     //Button///////////////
     document.getElementById("defaultSettings").addEventListener("click", restoreDefaultConfig);
 
@@ -129,7 +129,7 @@ window.addEventListener('load', (event) => {
     }
 
     ///////////////////////
-    
+
     //Functions////////////////////////////////////////////////////////////
 
     function setUI(configuration){
@@ -166,7 +166,7 @@ window.addEventListener('load', (event) => {
     }
 
     function changeConfig(key, value){
-        chrome.storage.sync.get(['configuration'], function(configuration) { 
+        chrome.storage.sync.get(['configuration'], function(configuration) {
             configuration["configuration"][key] = value;
 
             chrome.storage.sync.set({'configuration': configuration["configuration"]}, function(){});
