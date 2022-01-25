@@ -20,31 +20,43 @@ class Mover {
     
   }
   
+  //Newton's 2nd Law (the beginning)
+  
+  void applyForce(PVector force) {
+     acceleration.add(force); //force accumulation 
+  }
+  
   void update() {
-    PVector mouse = new PVector(mouseX, mouseY);
-    mouse.sub(location);
-    mouse.setMag(0.5);
-    acceleration = mouse;
-    //sub and setmag for mouse enables the ball to move around to one pVector to another
-    //vector class has a random unit vector function built into it 
-    
-   location.add(velocity); 
    velocity.add(acceleration);
+   location.add(velocity); 
+   acceleration.mult(0); //clears out acceleration
+   
+   
    //add velocity to location, essentially making the ball move
    //creates a physics engine
-   
-    velocity.limit(5);
+    //velocity.limit(5);
     //constructs an artificial constraint; the velocity can never have a magnitutde greater than 5
     //limit is good to control the shape when it follows mouse PVector
   }
-  void edges() {
-   if (location.x > width) location.x = 0;
-   if (location.x < 0 ) location.x = width;
-   if (location.y > height) location.y = 0;
-   if (location.y < 0) location.y = height;
+  void checkEdges() {
+    if (location.x > width) {
+      location.x = width;
+      velocity.x *= -1;
+    } else if (location.x < 0) {
+      velocity.x *= -1;
+      location.x = 0;
+    }
+       if (location.y > height) {
+
+
+//if the ball hits the edge, the velocity makes the ball go in the opposite direction, as if it bounced off it
+      velocity.y *= -1;
+      location.y = height;
+    }
   }
   
   void display() {
+   println(location.x, location.y);
     stroke(0);
     strokeWeight(2);
     fill(127);
