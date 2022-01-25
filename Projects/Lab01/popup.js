@@ -48,6 +48,16 @@ window.addEventListener('load', (event) => {
         changeConfig("adsDisplay", this.value);
     }
 
+    
+    var classname2 = document.getElementsByClassName("themeDisplay");
+
+    for (var i = 0; i < classname2.length; i++) {
+        classname2[i].addEventListener('change', setThemeSettings, false);
+    }
+
+    function setThemeSettings(){
+        changeConfig("themeDisplay", this.value);
+    }
     ///////////////////////
 
     //Functions////////////////////////////////////////////////////////////
@@ -69,8 +79,16 @@ window.addEventListener('load', (event) => {
                 classname[i].checked = true;
             }
         }
+    
+
+    var classname2 = document.getElementsByClassName("themeDisplay");
+    for (var i = 0; i < classname2.length; i++) {
+        if(classname2[i].value == configuration.themeDisplay){
+            classname2[i].checked = true;
+        }
     }
 
+    }
     function changeConfig(key, value){
         chrome.storage.sync.get(['configuration'], function(configuration) {
             configuration["configuration"][key] = value;
