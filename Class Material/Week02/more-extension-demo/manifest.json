@@ -19,9 +19,8 @@
   "content_scripts": [{
     "matches": [
       "<all_urls>",
-      "css": ["lime.css"]
 
-    "js": ["program.js"]
+"js": ["program.js"]
   }],
 
   "background": {
