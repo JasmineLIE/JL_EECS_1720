@@ -32,13 +32,14 @@ window.addEventListener('load', (event) => {
 
 //default settings
     function restoreDefaultConfig(){
-        const defaultConfiguration = {
+        const defaultConfiguration = { //establish configuration values
             "configuration":{
                 "themeDisplay": "tumbleweed", //"oldBlues", "limeChild"
                 "adsDisplay": "normal", //"remove", "standOut"
                 "adBackgroundColor": "antiquewhite",
                 "removeEmojis": false,
                 "images": false,
+                "urlColor": "gold" //"cyan", "lime"
             }
         }
 
