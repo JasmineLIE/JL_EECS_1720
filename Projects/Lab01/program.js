@@ -79,7 +79,7 @@ function modifySearchResults(configuration){
 }
 
 if(configuration.themeDisplay == "tumbleweed" || configuration.themeDisplay == "oldBlues" || configuration.themeDisplay == "limeChild") {
-    let bgElement = document.getElementsByID("html body");
+    let bgElement = document.getElementsByTagName("html body");
 
   
     }
