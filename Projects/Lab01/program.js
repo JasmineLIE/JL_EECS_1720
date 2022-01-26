@@ -21,6 +21,7 @@ if(url.includes(".google.") && isSearch()){
         "removeEmojis": false,
        "themeDisplay" : "tumbleweed", //"oldBlues", "limeChild"
         "images": false,
+        "urlColor": "gold" //"cyan", "lime"
       
     };
 
@@ -79,11 +80,31 @@ function modifySearchResults(configuration){
 }
 
 if(configuration.themeDisplay == "tumbleweed" || configuration.themeDisplay == "oldBlues" || configuration.themeDisplay == "limeChild") {
-    let bgElement = document.getElementsByTagName("html body");
+   
 
-  
+    if(configuration.themeDisplay == "tumbleweed") {
+        
+    
+        
+        
+        }
+     
+        
+    
+
+    if(configuration.themeDisplay == "limeChild") {
+      
+     
     }
-}
+
+    if(configuration.themeDisplay == "oldBlues") {
+
+
+    }
+    }
+    }
+
+
  
 
 //Utils/////////////////////////////////////////////////////////////////////////
