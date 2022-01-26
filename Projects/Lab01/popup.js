@@ -12,29 +12,42 @@ window.addEventListener('load', (event) => {
 
     //Checkbox events//////////////////////
 
-
-    document.getElementById("colorUrlCheckBox").addEventListener("change", event =>{
-        changeConfig("colorUrl", event.target.checked);
-    });
-
   
 
-  
 
     document.getElementById("imagesCheckBox").addEventListener("change", event =>{
         changeConfig("images", event.target.checked);
     });
 
-;
+    document.getElementById("removeEmojisCheckBox").addEventListener("change", event =>{
+        changeConfig("removeEmojis", event.target.checked);
+    });
 
     //Color Selection /////
     document.getElementById("adBackgroundColorSelection").addEventListener("change", event =>{
         changeConfig("adBackgroundColor", event.target.value);
     });
 
+    document.getElementById("defaultSettings").addEventListener("click", restoreDefaultConfig);
 
+//default settings
+    function restoreDefaultConfig(){
+        const defaultConfiguration = {
+            "configuration":{
+                "themeDisplay": "tumbleweed", //"oldBlues", "limeChild"
+                "adsDisplay": "normal", //"remove", "standOut"
+                "adBackgroundColor": "antiquewhite",
+                "removeEmojis": false,
+                "images": false,
+            }
+        }
 
+        sendToProgramJS(defaultConfiguration);
 
+        setUI(defaultConfiguration["configuration"]);
+
+        chrome.storage.sync.set({'configuration': defaultConfiguration["configuration"]}, function(){});
+    }
 
 
     //Radio events/////////
@@ -47,7 +60,7 @@ window.addEventListener('load', (event) => {
     function setAdSettings(){
         changeConfig("adsDisplay", this.value);
     }
-
+//
     
     var classname2 = document.getElementsByClassName("themeDisplay");
 
@@ -64,7 +77,6 @@ window.addEventListener('load', (event) => {
 
     function setUI(configuration){
     
-        document.getElementById("colorUrlCheckBox").checked = configuration.colorUrl;
         document.getElementById("removeEmojisCheckBox").checked = configuration.removeEmojis;
 
         document.getElementById("imagesCheckBox").checked = configuration.images;
