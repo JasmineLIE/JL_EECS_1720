@@ -78,5 +78,63 @@ function modifySearchResults(configuration){
     });
 }
 
+if(configuration.themeDisplay == "tumbleweed" || configuration.themeDisplay == "oldBlues" || configuration.themeDisplay == "limeChild") {
+    let bgElement = document.getElementsByID("html body");
 
+  
+    }
 }
+ 
+
+//Utils/////////////////////////////////////////////////////////////////////////
+
+function removeElements(name, parentNum){
+    if(name[0] == '.'){
+        name = name.replace('.', '');
+        const elements = document.getElementsByClassName(name);
+
+        for (let i = 0; i < elements.length; i++){
+            let node = getParentNode(elements[i], parentNum);
+            node.style.display = 'none';
+        }
+    }else if(name[0] == '#'){
+        name = name.replace('#', '');
+
+        const element = document.getElementById(name);
+
+        if(element != null)
+            getParentNode(element, parentNum).style.display = 'none';
+    }else{
+        throw "Undefined element!";
+    }
+}
+
+function getParentNode(element, parentNum){
+    let parent = element;
+
+    for(let i = 0; parentNum > i; i++)
+        parent = parent.parentNode
+
+    return parent;
+}
+
+function ApplyToClass(className, delegate){
+    let elements = document.getElementsByClassName(className);
+
+    for (let i = 0; i < elements.length; i++)
+        delegate(elements[i]);
+}
+
+function forEachDoThis(listOfElementLists, delegate){
+    for(let elementList of listOfElementLists){
+        for(element of elementList){
+            delegate(element);
+        }
+    }
+}
+
+function insertAfter(newNode, referenceNode) {
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+}
+
+/////////////////////////////////////////////////////////////////////////////////
