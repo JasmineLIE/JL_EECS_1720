@@ -125,7 +125,7 @@ function modifySearchResults(configuration){
             if(tawElement != undefined){
                 ApplyToClass("waTp2e", function(element){
                     //Color ads.
-                  
+
                     element.style.backgroundColor = configuration.adBackgroundColor;
 
                     element.style.padding = "10px 10px 10px 10px";
@@ -253,6 +253,7 @@ function modifySearchResults(configuration){
 
 function setUrlColor(urlColor){
     if(urlColor != ""){
+
         let listOfElementLists = [
             document.getElementsByClassName("iUh30")//, //url part
             //document.getElementsByClassName("eipWBe"); //urn part
@@ -263,7 +264,10 @@ function setUrlColor(urlColor){
             element.style.color = urlColor;
         });
     }
-}
+
+  }
+
+
 
 function setUrlColorAds(urlColor){
     if(urlColor != ""){
