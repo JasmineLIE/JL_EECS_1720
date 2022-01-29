@@ -105,12 +105,20 @@ function modifySearchResults(configuration){
     } if (configuration.themeDisplay == "tumbleweed") {
 
         document.documentElement.style.setProperty('--text', '#FFC300');
+        document.documentElement.style.setProperty('--bg', '#ff9100');
+        document.documentElement.style.setProperty('--stroke', '#A75E00 ');
+
     } if (configuration.themeDisplay == "oldBlues") {
-        document.documentElement.style.setProperty('--text', '#00aeff');
+        document.documentElement.style.setProperty('--text', '#00FFE8');
+        document.documentElement.style.setProperty('--bg', '#0082FF');
+        document.documentElement.style.setProperty('--stroke', '#0039BB ');
+
     
     } if (configuration.themeDisplay == "limeChild") {
 
-
+        document.documentElement.style.setProperty('--text', '#B5FF00 ');
+        document.documentElement.style.setProperty('--bg', '#1DA000 ');
+        document.documentElement.style.setProperty('--stroke', '#009143 ');
     }
   
 
