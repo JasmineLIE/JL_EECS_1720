@@ -12,33 +12,30 @@ window.addEventListener('load', (event) => {
 
     //Checkbox events//////////////////////
 
-  
-
-
-    document.getElementById("imagesCheckBox").addEventListener("change", event =>{
-        changeConfig("images", event.target.checked);
+    document.getElementById("removeUrlCheckBox").addEventListener("change", event =>{
+        changeConfig("removeUrl", event.target.checked);
     });
 
-    document.getElementById("removeEmojisCheckBox").addEventListener("change", event =>{
-        changeConfig("removeEmojis", event.target.checked);
+    document.getElementById("removeArrowCheckBox").addEventListener("change", event =>{
+        changeConfig("removeArrow", event.target.checked);
     });
 
-    //Color Selection /////
-    document.getElementById("adBackgroundColorSelection").addEventListener("change", event =>{
-        changeConfig("adBackgroundColor", event.target.value);
+    document.getElementById("moveCheckBox").addEventListener("change", event =>{
+        changeConfig("moveUrl", event.target.checked);
     });
 
+   
+
+    //Button///////////////
     document.getElementById("defaultSettings").addEventListener("click", restoreDefaultConfig);
 
-//default settings
     function restoreDefaultConfig(){
         const defaultConfiguration = {
             "configuration":{
-                "themeDisplay": "tumbleweed", //"oldBlues", "limeChild"
-                "adsDisplay": "normal", //"remove", "standOut"
-                "adBackgroundColor": "antiquewhite",
-                "removeEmojis": false,
-                "images": false,
+                "themeDisplay": "tumbleweed",
+                "removeUrl": false,
+                "removeArrow": false,
+                "moveUrl": false
             }
         }
 
@@ -49,58 +46,39 @@ window.addEventListener('load', (event) => {
         chrome.storage.sync.set({'configuration': defaultConfiguration["configuration"]}, function(){});
     }
 
+    ///////////////////////
 
     //Radio events/////////
-    var classname = document.getElementsByClassName("adsDisplay");
+    var classname = document.getElementsByClassName("themeDisplay");
 
     for (var i = 0; i < classname.length; i++) {
-        classname[i].addEventListener('change', setAdSettings, false);
-    }
-
-    function setAdSettings(){
-        changeConfig("adsDisplay", this.value);
-    }
-//
-    
-    var classname2 = document.getElementsByClassName("themeDisplay");
-
-    for (var i = 0; i < classname2.length; i++) {
-        classname2[i].addEventListener('change', setThemeSettings, false);
+        classname[i].addEventListener('change', setThemeSettings, false);
     }
 
     function setThemeSettings(){
         changeConfig("themeDisplay", this.value);
     }
+
     ///////////////////////
 
     //Functions////////////////////////////////////////////////////////////
 
     function setUI(configuration){
-    
-        document.getElementById("removeEmojisCheckBox").checked = configuration.removeEmojis;
-
-        document.getElementById("imagesCheckBox").checked = configuration.images;
-       
-        document.getElementById("adBackgroundColorSelection").value  = configuration.adBackgroundColor;
+        document.getElementById("removeUrlCheckBox").checked = configuration.removeUrl;
+        document.getElementById("removeArrowCheckBox").checked = configuration.removeArrow;
+        document.getElementById("moveCheckBox").checked = configuration.moveUrl;
+  
 
 
-        var classname = document.getElementsByClassName("adsDisplay");
+        var classname = document.getElementsByClassName("themeDisplay");
 
         for (var i = 0; i < classname.length; i++) {
-            if(classname[i].value == configuration.adsDisplay){
+            if(classname[i].value == configuration.themeDisplay){
                 classname[i].checked = true;
             }
         }
-    
-
-    var classname2 = document.getElementsByClassName("themeDisplay");
-    for (var i = 0; i < classname2.length; i++) {
-        if(classname2[i].value == configuration.themeDisplay){
-            classname2[i].checked = true;
-        }
     }
 
-    }
     function changeConfig(key, value){
         chrome.storage.sync.get(['configuration'], function(configuration) {
             configuration["configuration"][key] = value;
