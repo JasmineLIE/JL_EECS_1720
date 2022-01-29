@@ -14,18 +14,17 @@ const url = window.location.href;
 //Only run on Google domain.
 if(url.includes(".google.") && isSearch()){
     //Initialization///////////////////////////////////////////////////////////
+
     let configuration = {
-      
-        "adsDisplay" : "normal", //"remove", "standOut"
-        "adBackgroundColor" : "antiquewhite",
-        "removeEmojis": false,
-       "themeDisplay" : "tumbleweed", //"oldBlues", "limeChild"
-        "images": false,
-      
+        "themeDisplay": "tumbleweed", //"oldBlues", "limeChild"
+        "removeUrl" : false,
+        "removeArrow" : false,
+        "moveUrl": false
+        
     };
 
-      //Store defaults if nothing is stored.
-      chrome.storage.sync.get(['configuration'], function(storedConfiguration) {
+    //Store defaults if nothing is stored.
+    chrome.storage.sync.get(['configuration'], function(storedConfiguration) {
         if('configuration' in storedConfiguration)
             configuration = storedConfiguration;
         else
@@ -34,6 +33,9 @@ if(url.includes(".google.") && isSearch()){
         modifySearchResults(configuration["configuration"]);
     });
 }
+
+
+////////////////////////////////////////////////////////////////////////
 
 
 //Receive data from popup.js////////////////////////////////////////////
@@ -51,40 +53,176 @@ function receivedMessage(message, sender, response){
 
 function modifySearchResults(configuration){
     //Remove Url////////////////////////////////////////////////////////
-    //Images next to/in some search results
-    if(configuration.images){
-        ApplyToClass("SD80kd", function(element){
-            element.style.display = "none";
-        });
+    if(configuration.removeUrl){
+        //Remove url and icon.
+        removeElements(".TbwUpd", 0);
+        //Remove url and icon on the litle pages thingy that appears.
+        removeElements(".qdrjAc", 0);
 
-        ApplyToClass("FxLDp", function(element){
-            element.style.padding = "0";
-        });
+        //Decrease distance between results.
+        decreaseResultDistance("TbwUpd"); //Normal results.
     }
 
-    if(configuration.removeEmojis){
-        //Make list of elements to be processed.
-        let listOfElementLists = [
-            document.getElementsByClassName("LC20lb"),
-            document.getElementsByClassName("st"),
-            document.getElementsByClassName("cbphWd"),
-            document.getElementsByClassName("fl")
-        ];
-    //For each element take it's inner text replace any emojis with '' and save the new string back into the element.
-    forEachDoThis(listOfElementLists, function(element){
-        const cleanedString =element.innerText.replace(/([\u2700-\u27BF]|[\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDD10-\uDDFF])/g, '');
-        if(element.innerText != cleanedString)
-            element.innerText = cleanedString;
-    });
-}
 
-if(configuration.themeDisplay == "tumbleweed" || configuration.themeDisplay == "oldBlues" || configuration.themeDisplay == "limeChild") {
-    let bgElement = document.getElementsByTagName("html body");
+    //Remove arrows at the end of urls////////////////////////////////////
+    if(configuration.removeArrow || configuration.removeUrl || configuration.moveUrl){
+        //Remove arrow.
+        removeElements(".B6fmyf", 0);
+        //Remove arrow from ad.
+        removeElements(".e1ycic", 0);
+        //Remove 3 dots if present instaed of arrow.
+        removeElements(".D6lY4c", 0);
+        removeElements(".rIbAWc", 0);
+    }
 
+
+   
+
+
+    //Move Url////////////////////////////////////////////////////////////////
+    if(configuration.moveUrl){
+        cutPasteUrl();
+        cutPasteUrlPagesThingy();
+
+        //Decrease distance between results.
+        decreaseResultDistance("TbwUpd"); //Normal results.
+    }
+
+
+    //MoveUrl////////////////////////////////////////////////////////////////
+    if(configuration.moveUrl && (configuration.adsDisplay != "remove")){
+        cutPasteUrlAds();
+
+        //Decrease distance between results.
+        decreaseResultDistance("sA5rQ"); //Ads
+        decreaseResultDistance("TbwUpd"); //Normal results.
+    }
+
+
+    if(configuration.themeDisplay == "tumbleweed" || configuration.themeDisplay == "oldBlues" || configuration.display == "limeChild") {
+        var footer = document.querySelector('footer')
+        
+    } if (configuration.themeDisplay == "tumbleweed") {
+
+        document.documentElement.style.setProperty('--text', '#FFC300');
+    } if (configuration.themeDisplay == "oldBlues") {
+        document.documentElement.style.setProperty('--text', '#00aeff');
+    
+    } if (configuration.themeDisplay == "limeChild") {
+
+
+    }
   
+
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+//Search results modification functions/////////////////////////////////////////
+
+
+
+function cutPasteUrl(){
+    let elements = document.getElementsByClassName("TbwUpd");
+    let elementsArrow = document.getElementsByClassName("eFM0qc");
+
+    //Set elements to flex to always push url under title.
+    for(let i = 0; i < elements.length; i++){
+        elements[i].style.display = "flex";
+    }
+
+    let elementsG = document.getElementsByClassName("g");
+    //Decrese margin.
+    for(let i = 0; i < elementsG.length; i++){
+        elementsG[i].style.margin = "0px 0px 20px 0px";
+    }
+
+    //Remove <br>.
+    for(let i = 0; i < elements.length; i++){
+        let brTags = elements[i].parentNode.getElementsByTagName("BR");
+        for(berTag of brTags){
+            berTag.parentNode.removeChild(berTag);
+        }
+    }
+
+    //Insert url into new position.
+    for (let i = 0; i < elements.length; i++){
+        if(!elements[i].className.includes("NJjxre")){
+            let element = elements[i]; //Get url element.
+            let parentElement = element.parentNode.parentNode; //Get parent element
+
+            //Get the element before which the url has to be inserted.
+            insertBeforeElement = parentElement.childNodes[0];
+
+            //insert element in new position.
+            insertAfter(element, insertBeforeElement); //parentElement.insertBefore(element, insertBeforeElement);
+        }
+    }
+
+    //Remove elements.
+    for (let i = 0; elements.length > i; i++){
+        if(elements[i].className.includes("NJjxre")){
+            //Remove element.
+            elements[i].parentNode.removeChild(elements[i]);
+            i--;
+        }
     }
 }
- 
+
+function cutPasteUrlAds(){
+    let elements = document.getElementsByClassName("ads-visurl");
+
+    for (let i = 0; i < elements.length; i++){
+        if(!elements[i].className.includes("NJjxre")){
+            let element = elements[i]; //Get url element.
+            let parentElement = element.parentNode.parentNode; //Get parent element
+
+            //Get the element before which the url has to be inserted.
+            insertBeforeElement = parentElement.childNodes[0];
+
+            //insert element in new position.
+            insertAfter(element, insertBeforeElement); //parentElement.insertBefore(element, insertBeforeElement);
+        }
+    }
+}
+
+function cutPasteUrlPagesThingy(){
+    let elements = document.getElementsByClassName("qdrjAc");
+    let elementsConst = [];
+
+    for (let i = 0; i < elements.length; i++){
+        elementsConst.push(elements[i].getAttribute('class'));
+    }
+
+    for (let i = 0; i < elements.length; i++){
+        //if(!elementsConst[i].includes("qks8td")){
+            let element = elements[i];
+            let parentElement = element.parentNode.parentNode.parentNode;
+
+            elements[i].parentNode.removeChild(elements[i]);
+
+            insertBeforeElement = parentElement.childNodes[1]
+
+            parentElement.insertBefore(element, insertBeforeElement);
+        //}
+    }
+}
+
+function decreaseResultDistance(className){
+    elements = document.getElementsByClassName(className);
+
+    for (let i = 0; i < elements.length; i++){
+        br = elements[i].parentNode.getElementsByTagName('br');
+        if(br.length != 0)
+            br[0].parentNode.removeChild(br[0]);
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+
 
 //Utils/////////////////////////////////////////////////////////////////////////
 
