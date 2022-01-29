@@ -16,7 +16,7 @@ if(url.includes(".google.") && isSearch()){
     //Initialization///////////////////////////////////////////////////////////
 
     let configuration = {
-        "themeDisplay": "tumbleweed", //"oldBlues", "limeChild"
+        "themeDisplay": "tumbleweed", //"oldBlues", "limeChild", "rebel", "lilac"
         "removeUrl" : false,
         "removeArrow" : false,
         "moveUrl": false
@@ -119,6 +119,17 @@ function modifySearchResults(configuration){
         document.documentElement.style.setProperty('--text', '#B5FF00 ');
         document.documentElement.style.setProperty('--bg', '#1DA000 ');
         document.documentElement.style.setProperty('--stroke', '#009143 ');
+    } if (configuration.themeDisplay == "rebel") {
+
+        document.documentElement.style.setProperty('--text', '#ff4929');
+        document.documentElement.style.setProperty('--bg', '#940700');
+        document.documentElement.style.setProperty('--stroke', '#7d0800');
+
+    } if (configuration.themeDisplay == "lilac") {
+
+        document.documentElement.style.setProperty('--text', '#e49cff ');
+        document.documentElement.style.setProperty('--bg', '#470070');
+        document.documentElement.style.setProperty('--stroke', '#5900b3');
     }
   
 
