@@ -3,15 +3,13 @@
     /* :root is a clever way of saying "the outer-most element" */
     
     --text: #FFC300; /* the default */
-    --blue: #00aeff;
-    --green: #00ff22;
-    --stroke:rgb(167, 94, 0); /* the default */
-    --bg: #ffa600; /* the default */
+    --stroke:#A75E00 ; /* the default */
+    --bg: #8f5d00; /* the default */
     
 
   }
 html body {
-    background: url("https://i.imgur.com/54euOeo.jpg") center center fixed;
+    background: url("https://i.imgur.com/pmhYKdX.png") center center fixed;
     background-color: var(--bg); /* Tint color.  Has to be right below the background: url to take */
     background-blend-mode: multiply;
 }
