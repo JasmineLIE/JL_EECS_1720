@@ -20,8 +20,8 @@
         {
 
         "matches": ["https://www.google.com/*"],
-        "css": ["style.css"]
-    
+        "css": ["style.css"],
+        "js": ["program.js"]
     }
 
 ],
