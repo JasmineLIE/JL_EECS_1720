@@ -1,0 +1,3 @@
+ # Artistic Statement and Reflection
+
+ 
