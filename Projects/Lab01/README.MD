@@ -2,23 +2,23 @@
 
  Destiny's Browser is a Chrome search browser visual overhaul.  By utilizing :root to set changeable colour variables to my CSS, HTML radio buttons, and JavaScript, the Destiny's Browser extension changes the background image, text colour, and stroke colour of the regular search page.  There are five different colour schemes to choose from: Tumbleweed, Old Blues, Lime Child, Rebel, and Lilac.  The user can alternate between the five themes easily without the need to refresh the browser.  Additionally, the extension can alter the URL position and appearence.
 
- 1. Tumbleweed
+ ## 1. Tumbleweed
 
  ![Tumbleweed](images/TumbleweedEx.png)
 
- 2. Old Blues
+ ## 2. Old Blues
 
  ![Old Blues](images/OldBluesEx.png)
 
- 3. Lime Child
+ ## 3. Lime Child
 
  ![Lime Child](images/LimeChildEx.png)
 
- 4. Rebel
+ ## 4. Rebel
 
  ![Rebel](images/RebelEx.png)
 
- 5. Lilac
+ ## 5. Lilac
 
  ![Lilac](images/LilacEx.png)
  
@@ -39,13 +39,13 @@ Artistic comments aside, in this extension, for the technological coding aspect 
 
 Destiny is a character I created and designed with a friend.  She's an characterized AI; a rebellious cowgirl who's here for a job well done.  The background image of the search page is her giving the user a thumbs up, and the background of the popup is her wanted poster.  With the flavour text provided in the Popup, she's suggested to be the one handling the changes to the search page.  Destiny is meant to be fun mascot for the extension, giving it more personality with her style and presence.
 
-Popup
+## Popup
 ![Popup](images/PopupEx.png) 
 ![PopupGif](images/MOSHED-2022-1-22-15-44-19.gif)
 
-Icons
+## Icons
 ![Destiny Icon](images/icon128_2.png)
 ![Destiny's Hat](images/icon128.png)
 
-Destiny Official art and Concept
+## Destiny Official art and Concept
 ![Destiny Reference](images/DestinyRef.png)
