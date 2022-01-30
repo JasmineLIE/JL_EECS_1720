@@ -20,4 +20,4 @@
 
  5. Lilac
 
- ![Lilac](images/)
+ ![Lilac](images/LilacEx.png)
