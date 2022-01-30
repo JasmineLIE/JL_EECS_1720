@@ -1,5 +1,5 @@
 {
-    "manifest_version": 3,
+    "manifest_version": 2,
     "name": "Destiny's Browser",
     "description": "Allows the user to change the look of their Google search page and customize URL appearence.",
     "version": "1.0",
