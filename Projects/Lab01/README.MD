@@ -47,5 +47,5 @@ Destiny is a character I created and designed with a friend.  She's an character
 ![Destiny Icon](images/icon128_2.png)
 ![Destiny's Hat](images/icon128.png)
 
-## Destiny Official art and Concept
+## Destiny Official Art and Concept
 ![Destiny Reference](images/DestinyRef.png)
