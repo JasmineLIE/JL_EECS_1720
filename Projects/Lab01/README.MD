@@ -4,20 +4,20 @@
 
  1. Tumbleweed
 
- ![first](/images/TumbleweedEx.png "Tumbleweed gives the extension an amber-ish theme")
+ ![Tumbleweed](images/TumbleweedEx.png)
 
  2. Old Blues
 
- ![second](/images/OldBluesEx.png)
+ ![Old Blues](images/OldBluesEx.png)
 
  3. Lime Child
 
- ![third](/images/LimeChildEx.png)
+ ![Lime Child](images/LimeChildEx.png)
 
  4. Rebel
 
- ![fourth](/images/RebelEx.png)
+ ![Rebel](images/RebelEx.png)
 
  5. Lilac
 
- ![fifth](/images/LilacEx.png)
+ ![Lilac](images/LilacEx.png)
