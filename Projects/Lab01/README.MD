@@ -4,20 +4,20 @@
 
  1. Tumbleweed
 
- ![first](/images/TumbleweedEx.png)
+ (/images/TumbleweedEx.png)
 
  2. Old Blues
 
- ![second](/images/OldBluesEx.png)
+ (/images/OldBluesEx.png)
 
  3. Lime Child
 
- ![third](/images/LimeChildEx.png)
+ (/images/LimeChildEx.png)
 
  4. Rebel
 
- ![fourth](/images/RebelEx.png)
+(/images/RebelEx.png)
 
  5. Lilac
 
- ![fifth](/images/LilacEx.png)
+ (/images/LilacEx.png)
