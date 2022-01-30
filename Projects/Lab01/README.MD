@@ -22,9 +22,7 @@
 
  ![Lilac](images/LilacEx.png)
  
- 6. Popup
-
- ![Popup](images/PopupEx.png) 
+ 
 
 ---
 
@@ -34,7 +32,20 @@ The main point of Destiny's Browser was to tackle the unbearing simplicity of co
 
 To concur, I wanted Destiny's Browser to pose the question: "Why do we need to settle for simplicity?  Why aren't there tools available, to whose who want them, to make something more of the little things like the search page background or text colour?"  And, guided by that question, I built the extension as a form of solution.  
 
+Artistic comments aside, in this extension, for the technological coding aspect I focused on Radio Button code and manipulation.  
 ---
 
 # So, Who's Destiny and Why is This Her Browser?
 
+Destiny is a character I created and designed with a friend.  She's an characterized AI; a rebellious cowgirl who's here for a job well done.  The background image of the search page is her giving the user a thumbs up, and the background of the popup is her wanted poster.  With the flavour text provided in the Popup, she's suggested to be the one handling the changes to the search page.  Destiny is meant to be fun mascot for the extension, giving it more personality with her style and presence.
+
+Popup
+![Popup](images/PopupEx.png) 
+![PopupGif](images/MOSHED-2022-1-22-15-44-19.gif)
+
+Icons
+![Destiny Icon](images/icon128_2.png)
+![Destiny's Hat](images/icon128.png)
+
+Destiny Official art and Concept
+![Destiny Reference](images/DestinyRef.png)
