@@ -138,7 +138,7 @@ function isSearch() {
     if (configuration.themeDisplay == "lilac") {
   
       document.documentElement.style.setProperty('--text', '#e49cff ');
-      document.documentElement.style.setProperty('--bg', '#470070');
+      document.documentElement.style.setProperty('--bg', '#c300ff');
       document.documentElement.style.setProperty('--stroke', '#5900b3');
     }
   }
