@@ -49,3 +49,12 @@ elif userInput == "2":
     print ("I love Python")
 else:
     print ("You did not enter a valid number")
+
+#Inline If -- statement similar to if statement but more conveninent if you need to perform simple tax (like switch statement?)
+
+num1 = 12 if myInt==10 else 13
+
+
+#the statement assigns 12 to num1 (Task a) if myInt == 10.  Else it assigns 13 to num1 (task B)
+
+print ("This is task A" if myInt == 10 else "This is task B")
