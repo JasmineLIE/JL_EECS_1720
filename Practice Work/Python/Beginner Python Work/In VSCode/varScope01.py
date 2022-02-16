@@ -37,5 +37,6 @@ Outside the function, the local variable message2 is not accessible.  We get a N
 
 The second concept to understand about variable scope is that if a local variable shares the same name as a global variable, any code inside the function is accessing the local variable
 Any code outside is accessing the global variable
+
 '''
 
