@@ -1,6 +1,6 @@
 #Read a file by buffer size so our program does not use too many memory resources
 
-inputFile = open('C:\\Users\hwafu\OneDrive\Documents\GitHub\JL_EECS_1720\Practice Work\Python\Beginner Python Work\In VSCode\OpeningAndReadingTextFiles/myfile.txt', 'r')
+inputFile = open('myfile.txt', 'r')
 
 outputFile = open('myoutputfile.txt', 'w')
 
